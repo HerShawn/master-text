@@ -1,0 +1,113 @@
+﻿% multiple1902 <multiple1902@gmail.com>
+% master.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+%
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Weisi Dai.
+%
+\documentclass[
+    master,
+    truefont, % just turn it on when using Windows
+    %nofont, % remember to manally set the fonts
+    pdflinks,
+    %colorlinks,
+    % compact,
+    ]{xjtuthesis}
+
+\usepackage{threeparttable}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{listings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  language=Octave,                % the language of the code
+  basicstyle=\small,           % the size of the fonts that are used for the code
+  %numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=2,                   % the step between two line-numbers. If it's 1, each line
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+    % 请修改 meta.tex 中的论文元信息
+    \input{meta_text.tex}
+    \xjtuchead
+    \xjtuehead
+    \xjtucinfopage
+    \xjtueinfopage
+    \xjtutoc
+    \xjtutoe
+    \clearpage
+
+    % 主要符号表，可以没有
+    %\input{pages/denotation.tex}
+
+    \xjtucontent
+        \input{pages/chapter1.tex}
+        \input{pages/chapter2.tex}
+        \input{pages/chapter3.tex}
+        \input{pages/chapter4.tex}
+        \input{pages/chapter5.tex}
+        \input{pages/chapter6.tex}
+    \xjtuendcontent
+
+    % 将你要引用的文献的 BibTeX 放入 bibliography.bib
+    \xjtubib{bibliography}
+
+    \xjtuappendix
+        \input{pages/appendice.tex}
+    \xjtuendappendix
+
+    \xjtuspchapter{致谢}{致\qquad 谢}{Acknowledgements}
+        \input{pages/acknowledgements_blind.tex}
+
+    \xjtuspchapter{攻读硕士期间取得的研究成果}{攻读硕士期间取得的研究成果}{Achievements}
+        \input{pages/achievements_blind.tex}
+
+    \xjtuacademicintegrity
+
+
+\end{document}

@@ -1,0 +1,100 @@
+﻿% multiple1902 <multiple1902@gmail.com>
+% meta.tex
+% Copyright 2011~2012, multiple1902 (Weisi Dai)
+% https://code.google.com/p/xjtuthesis/
+%
+% It is strongly recommended that you read documentations located at
+%   http://code.google.com/p/xjtuthesis/wiki/Landing?tm=6
+% in advance of your compilation if you have not read them before.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Weisi Dai.
+%
+
+% 标题，中文
+\ctitle{连铸坯表面缺陷检测方法研究}
+
+% 作者，中文
+\cauthor{ }
+
+% 学科，中文，本科生不需要
+\csubject{软件工程}
+
+% 导师姓名，中文
+\csupervisor{ }
+
+% 关键词，中文。用全角分号「；」分割
+% 研究生的应首先从《汉语主题词表》中摘选
+\ckeywords{缺陷检测；显著性检测；深度图像；基准面；图像分割；法向量}
+
+% 提交日期，本科生不需要
+\cproddate{\the\year 年\the\month 月}
+
+% 论文类型，中文，本科生不需要
+% 从理论研究、应用基础、应用研究、研究报告、软件开发、设计报告、案例分析、调研报告、其它中选择
+\ctype{应用研究}
+
+% 论文标题，英文
+\etitle{Research of suface defect detection method for continuous casting slab}
+
+% 作者姓名，英文
+\eauthor{ }
+
+% 学科，英文，本科生不需要
+\esubject{Software Engineering}
+
+% 导师姓名，英文
+\esupervisor{ }
+
+% 关键词，英文。用半角分号和一个半角空格「; 」分割
+\ekeywords{defect detection; saliency detection; depth map; datum plane; image segmentation; normal vector}
+
+% 学科门类，英文
+% 从Philosophy（哲学）、Economics（经济学）、Law（法学）、Education（教育学）、Arts（文学）、
+%   Science（理学）、Engineering Science（工学）、Medicine（医学）、Management Science（管理学）中选择
+\ecate{Engineering Science}
+
+% 提交日期，英文，本科生不需要
+% 应当和 cproddate 保持一致
+\eproddate{\monthname{\month}\ \the\year}
+
+% 论文类型，英文，本科生不需要
+% 从Theoretical Research（理论研究）、Application Fundamentals（应用基础）、Applied Research（应用研究）、
+%   Research Report（研究报告）、Software Development（软件开发）、Design Report（设计报告）、
+%   Case Study（案例分析）、Investigation Report（调研报告）、其它（Other）中选择
+\etype{Applied Research}
+
+% 摘要，中文。段间空行
+\cabstract{
+自连铸机诞生以来，高温状态下钢板实时缺陷检测一直是热门的研究领域，实现这一技术可以避免存在缺陷的半成品钢材无意义的继续加工，提高热送率，增加生产效率。钢板表面的缺陷检测往往充满挑战，主要因为钢板表面的情况复杂、光照不均、存在氧化铁皮这种伪缺陷等等。
+
+为了解决连铸坯表面黑斑的干扰，本文首先提出了一种基于显著性的钢板表面缺陷检测方法，该方法引入视觉显著性原理通过提升图像缺陷区域与背景区域的对比度来提高缺陷查全率，同时通过在多个尺度上应用视觉显著性特征来去除黑斑对检测结果的干扰，从而有效地降低缺陷的误检率，最后通过实验证明，该方法具有很好的检测效果，并且实时性高，符合工业生产的需要。然而，该方法只能专门去除黑斑这种伪缺陷，对于其他的伪缺陷检测效果不佳。
+
+基于RGB图像的方法往往难以将伪缺陷和真正的缺陷区分开来，因此，本文提出了两种基于深度图像的钢板表面缺陷检测算法，分别是基于基准面的缺陷检测算法和基于法向量的缺陷检测算法，它们主要利用深度信息来检测钢板表面缺陷，能够有效地应对上述这些难点。基于基准面的缺陷检测算法希望能找到深度图像的基准面，然后将深度值与基准面差别较大的缺陷区域提取并分割出来。
+
+基于基准面拟合的方法非常依赖于基准面拟合的准确，并且该方法查准率较低，为了解决上述问题，提出了基于法向量的方法。基于法向量的缺陷检测算法使用法向量梯度图像来刻画法向量的变化程度，然后根据法向量梯度图像将缺陷区域分割出来。
+
+最后，为了验证本文提出的基于深度图像的缺陷检测算法，基于真实的钢板深度数据，本文使用人工合成手段构建了一个钢板深度图像数据集。在该数据集上的实验结果显示，本文提出的两个缺陷检测算法都达到了很好的效果，能够有效地检测出钢板表面缺陷。
+}
+
+% 摘要，英文。段间空行
+\eabstract{
+Real-time defect detection for high temperature steel slabs is always one of the hot research fields since continuous casting machine appeared. Realizing the technique would avoid unnecessary processing of the defective semi-finished product, raise hot delivery rate and increase production efficiency. Defect detection on steel surface is challenging owing to complicated situation, uneven illumination, and existence of pseudo-flaw.
+
+In order to solve the problem of black spot on continuous casting slab, this paper presents a detection method base on the saliency at first. This method has introduced visual salience principle, which improved the defect detection rate by enhancing the contrast between image defect area and background area. It also eliminates the spots interference on the test results as well by using the multi-scale approach. Along with the experiments, this paper finally proved that this method presents good detection effect and high real-time performance, which fully satisfies the performance requirements of industrial production. However this method focuses on removing black spot, for other pseudo-flaw, the performance is not good enough.
+
+RGB image based method can hardly distinguish pseudo-flaw from real defect, hence, This paper proposes two depth image based defect detection methods for steel slabs, they are datum plane based defect detection algorithm and normal vector based defect detection algorithm respectively. They mainly use depth data to detect defect, and can handle the difficulties mentioned above effectively. Datum plane based defect detection method wishes to obtain datum plane of the depth map, then it extracts and segments defect areas which deviate from datum plane on depth value.
+
+Datum plane based method is very dependent on the accuracy of datum plane fitting, besides, the precision of datum plane based method is not good enough, in order to solve the problem above, normal vector based method is proposed. Normal vector based defect detection method utilizes gradient map of normal vector to describe variation of normal vectors, next defect areas is segmented based on gradient map of normal vector.
+
+At last, in order to verify depth image based defect detection methods proposed by this paper, synthetic means are used to build a steel depth map data-set. Experimental results on this data-set show that two defect detection methods achieve good effects, and can detect defects on steel surface effectively.
+}
